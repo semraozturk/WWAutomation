@@ -1,0 +1,168 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-08-26T15:57:29.025Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2095000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.ww.step_definitions.Hooks.setup(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "Find a workshop studio by zipcode",
+        "description": "",
+        "id": "as-user--i-should-be-able-to-find-a-studio-for-workshop;find-a-workshop-studio-by-zipcode;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 782000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.ww.step_definitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5006000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user has navigated to the home page",
+            "match": {
+              "location": "com.ww.step_definitions.FindStudio_StepDefinitions.user_has_navigated_to_the_home_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 11000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "verified the page title",
+            "match": {
+              "location": "com.ww.step_definitions.FindStudio_StepDefinitions.verified_the_page_title()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 346000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user clicks on Studio button",
+            "match": {
+              "location": "com.ww.step_definitions.FindStudio_StepDefinitions.user_clicks_on_studio_button()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 301000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user enters \"10011\" in the search field box",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"10011\"",
+                  "offset": 12
+                }
+              ],
+              "location": "com.ww.step_definitions.FindStudio_StepDefinitions.user_enters_in_the_search_field_box(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 499000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user prints the title and distance of the first search result",
+            "match": {
+              "location": "com.ww.step_definitions.FindStudio_StepDefinitions.user_prints_the_title_and_distance_of_the_first_search_result()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 532000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "user clicks on the first search result",
+            "match": {
+              "location": "com.ww.step_definitions.FindStudio_StepDefinitions.user_clicks_on_the_first_search_result()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2685000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "user verifies the displayed location title in the workshop detail page",
+            "match": {
+              "location": "com.ww.step_definitions.FindStudio_StepDefinitions.user_verifies_the_displayed_location_title_in_the_workshop_detail_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 206000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "user clicks on Business Hours button",
+            "match": {
+              "location": "com.ww.step_definitions.FindStudio_StepDefinitions.user_clicks_on_business_hours_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 411000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "user should be able to print the business days and hours.",
+            "match": {
+              "location": "com.ww.step_definitions.FindStudio_StepDefinitions.user_should_be_able_to_print_the_business_days_and_hours()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@findStudio"
+          },
+          {
+            "name": "@regression"
+          }
+        ]
+      }
+    ],
+    "name": "As user, I should be able to find a studio for workshop",
+    "description": "",
+    "id": "as-user--i-should-be-able-to-find-a-studio-for-workshop",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/findWorkshop/FindStudio.feature",
+    "tags": []
+  }
+]
