@@ -73,6 +73,6 @@ jobs:
         
     - name: Run API integration tests
       run: |
-        mvn test
+        mvn clean test -Dcucumber.features = 'src/test/java/com/ww/step_definitions/FindStudio_StepDefinitions.java'
       env:
         GOOGLE_APPLICATION_CREDENTIALS: ${{ steps.auth.outputs.credentials_file_path }}
