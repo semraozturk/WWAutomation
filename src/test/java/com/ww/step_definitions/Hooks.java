@@ -7,6 +7,9 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.bigquery.*;
+
 import java.util.concurrent.TimeUnit;
 
 public class Hooks {
@@ -25,7 +28,7 @@ public class Hooks {
                 
         String projectId = "imposing-timer-420716";
         GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
-        BigQueryOptions.newBuilder().setCredentials(credentials).setProjectId(projectId).build().getService();
+        BigQuery bigquery = BigQueryOptions.newBuilder().setCredentials(credentials).setProjectId(projectId).build().getService();
         
         String query = "SELECT name FROM `imposing-timer-420716.test_dataset.test-table`";
 
