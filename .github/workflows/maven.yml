@@ -40,6 +40,7 @@ jobs:
       with:
         workload_identity_provider: '/projects/645586971453/locations/global/workloadIdentityPools/test-identity-pool/providers/test-identity-provider'
         service_account: 'test-service-account@imposing-timer-420716.iam.gserviceaccount.com'
+        audience : '//iam.googleapis.com/projects/645586971453/locations/global/workloadIdentityPools/test-identity-pool/providers/test-identity-provider'
         token_format: access_token
         access_token_lifetime: 3600s
         universe: googleapis.com
