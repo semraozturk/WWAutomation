@@ -22,10 +22,16 @@ public class Hooks {
 
         @After
         public void tearDown(Scenario scenario) {
+                
+        String projectId = "imposing-timer-420716";
+        GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
+        BigQueryOptions.newBuilder().setCredentials(credentials).setProjectId(projectId).build().getService();
+        
+
 
             if(scenario.isFailed()){
-                byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-                scenario.attach(screenshot,"image/png",scenario.getName());
+               // byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+                //scenario.attach(screenshot,"image/png",scenario.getName());
             }
 
             Driver.closeDriver();
