@@ -11,6 +11,8 @@ Feature: As user, I should be able to find a studio for workshop
     And user verifies the displayed location title in the workshop detail page
     And user clicks on Business Hours button
     Then user should be able to print the business days and hours.
+
+  
     Examples:
     |zipcode |
     | 10011   |
