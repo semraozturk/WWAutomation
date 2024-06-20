@@ -40,6 +40,16 @@ jobs:
         access_token_lifetime: 3600s
         universe: googleapis.com
         access_token_scopes: 'https://www.googleapis.com/auth/cloud-platform'
+   
+    - name: Access Token 
+      run: |
+          echo ${{steps.auth.outputs.access_token}}
+          echo ${{steps.auth.outputs}}
+          echo GOOGLE_APPLICATION_CREDENTIALS="$GOOGLE_APPLICATION_CREDENTIALS"
+          cat $GOOGLE_APPLICATION_CREDENTIALS
+          echo ${{steps.auth.outputs.project_id}}
+          echo ${{steps.auth.outputs.credentials_file_path}}
+          echo ${{steps.auth.outputs.auth_token}}
         
     - name: Run API integration tests
       run: |
