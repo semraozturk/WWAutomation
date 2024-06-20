@@ -22,6 +22,9 @@ jobs:
       
     runs-on: ubuntu-latest
 
+    env:
+      GOOGLE_APPLICATION_CREDENTIALS: C:\
+      
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 17
@@ -38,18 +41,16 @@ jobs:
       name: Authenticate with GCP
       uses: google-github-actions/auth@v2
       with:
-        workload_identity_provider: '/projects/645586971453/locations/global/workloadIdentityPools/test-identity-pool/providers/test-identity-provider/subject/semrayo2020@gmail.com'
+        workload_identity_provider: '/projects/645586971453/locations/global/workloadIdentityPools/test-identity-pool/providers/test-identity-provider'
         service_account: 'test-service-account@imposing-timer-420716.iam.gserviceaccount.com'
-        audience : '//iam.googleapis.com/projects/645586971453/locations/global/workloadIdentityPools/test-identity-pool/providers/test-identity-provider/subject/semrayo2020@gmail.com'
         token_format: access_token
         access_token_lifetime: 3600s
         universe: googleapis.com
-        access_token_scopes: 'https://iamcredentials.googleapis.com/v1'
+        access_token_scopes: 'https://www.googleapis.com/auth/cloud-platform'
    
     - name: Access Token 
       run: |
           echo ${{steps.auth.outputs.access_token}}
-          echo ${{steps.auth.outputs}}
           echo GOOGLE_APPLICATION_CREDENTIALS="$GOOGLE_APPLICATION_CREDENTIALS"
           cat $GOOGLE_APPLICATION_CREDENTIALS
           echo ${{steps.auth.outputs.project_id}}
