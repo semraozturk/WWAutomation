@@ -41,7 +41,7 @@ jobs:
       name: Authenticate with GCP
       uses: google-github-actions/auth@v1
       with:
-        workload_identity_provider: '/projects/645586971453/locations/global/workloadIdentityPools/test-identity-pool/providers/test-identity-provider'
+        workload_identity_provider: 'https://iam.googleapis.com/projects/645586971453/locations/global/workloadIdentityPools/test-identity-pool/providers/test-identity-provider'
         service_account: 'test-service-account@imposing-timer-420716.iam.gserviceaccount.com'
         token_format: access_token
         access_token_lifetime: 3600s
