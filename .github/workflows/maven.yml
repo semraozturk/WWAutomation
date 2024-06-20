@@ -73,9 +73,7 @@ jobs:
           echo ${{steps.auth.outputs.auth_token}}
         
     - name: Run API integration tests
-    env:
-      GOOGLE_APPLICATION_CREDENTIALS: ${{ steps.auth.outputs.credentials_file_path }}
       run: |
         mvn test
-        
-    
+      env:
+        GOOGLE_APPLICATION_CREDENTIALS: ${{ steps.auth.outputs.credentials_file_path }}
