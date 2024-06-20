@@ -24,7 +24,7 @@ public class Hooks {
 
 
         @After
-        public void tearDown(Scenario scenario) {
+        public void tearDown(Scenario scenario) throws Exception  {
                 
         String projectId = "imposing-timer-420716";
         GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
