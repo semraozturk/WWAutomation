@@ -27,8 +27,24 @@ public class Hooks {
         GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
         BigQueryOptions.newBuilder().setCredentials(credentials).setProjectId(projectId).build().getService();
         
+        String query = "SELECT name FROM `imposing-timer-420716.test_dataset.test-table`";
 
+        QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query).build();
+        Job queryJob = bigquery.create(JobInfo.newBuilder(queryConfig).build());
+        queryJob = queryJob.waitFor();
 
+        if (queryJob == null) {
+            throw new Exception("job no longer exists");
+        }
+        if (queryJob.getStatus().getError() != null) {
+            throw new Exception(queryJob.getStatus().getError().toString());
+        }
+        TableResult result = queryJob.getQueryResults();
+        for (FieldValueList row : result.iterateAll()) {
+            Integer count = row.get("f0_").getNumericValue().intValue();
+
+        }
+        
             if(scenario.isFailed()){
                // byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
                 //scenario.attach(screenshot,"image/png",scenario.getName());
