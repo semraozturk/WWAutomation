@@ -27,7 +27,9 @@ public class Hooks {
         public void tearDown(Scenario scenario) throws Exception  {
                 
         String projectId = "imposing-timer-420716";
+                
         GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
+                
         BigQuery bigquery = BigQueryOptions.newBuilder().setCredentials(credentials).setProjectId(projectId).build().getService();
         
         String query = "SELECT name FROM `imposing-timer-420716.test_dataset.test-table`";
